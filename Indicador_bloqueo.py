@@ -36,7 +36,7 @@ def Ind_bloqueo():
 
     df_f3_loaniq = sqlContext.sql(
         "select translate(concat(idemprcf,idcentcf,idprodcf,idcontrf), ' ', '') as partenon_iq from dlss_arqtec_confsw_desptc_h.objtemp_prima_loaniq where data_date_part = '" + fecha_datos + "' and substr(tipo_perf, 1, 1) != 'P'")
-    df_f3_fyc_version2 = sqlContext.sql(
+    df_f3_fyc = sqlContext.sql(
         "select concat(trim(idemprcf),trim(idcentcf),trim(idprodcf),trim(idcontrf)) as partenon_fyc, "
         "trim(idobjf) as garantia_fyc from dlss_ppss_fin_factoring_h.objtemp_prima_fyc where data_date_part = '" + fecha_datos + "'")
 
